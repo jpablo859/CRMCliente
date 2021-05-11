@@ -13,21 +13,21 @@ export const Sidebar = () => {
             </div>
 
             <nav className="mt-5 list-none">
-                <li className={router.pathname === "/" ? "bg-blue-800 p-2" : "p-2"}>
-                    <Link href="/">
+                <li className={router.pathname === "/cliente" ? "bg-blue-800 p-2 rounded" : "p-2"}>
+                    <Link href="/cliente">
                         <a className="text-white mb-2 block">
                             Clientes
                         </a>
                     </Link>
                 </li>
-                <li className={router.pathname === "/Pedidos" ? "bg-blue-800 p-2" : "p-2"}>
+                <li className={router.pathname === "/Pedidos" ? "bg-blue-800 p-2 rounded" : "p-2"}>
                     <Link href="/Pedidos">
                         <a className="text-white mb-2 block">
                             Pedidos
                         </a>
                     </Link>
                 </li>
-                <li className={router.pathname === "/Productos" ? "bg-blue-800 p-2" : "p-2"}>
+                <li className={router.pathname === "/Productos" ? "bg-blue-800 p-2 rounded" : "p-2"}>
                     <Link href="/Productos">
                         <a className="text-white mb-2 block">
                             Productos
