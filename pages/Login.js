@@ -56,7 +56,7 @@ const Login = () => {
                 localStorage.setItem('token', token);
 
                 setTimeout(() => {
-                    router.push('/');
+                    router.push('/cliente');
                 }, 2000)
 
             } catch (err) {

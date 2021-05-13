@@ -19,18 +19,17 @@ const QUERY_CLIENTES_USUARIO = gql`
 
  const Index = () => {
 
-  const { data, loading, refetch } = useQuery(QUERY_CLIENTES_USUARIO);
+  const { data, loading } = useQuery(QUERY_CLIENTES_USUARIO);
 
   const router = useRouter();
 
   if (loading){
-    refetch()
     return 'Cargando...';
   } 
 
-  if (!data.obtenerClientesVendedor) {
+  if (!data) {
     router.push('/Login')
-    return <p>Loading...</p>
+    return 'Cargando...';
   }
 
   return (
@@ -39,7 +38,7 @@ const QUERY_CLIENTES_USUARIO = gql`
         <div className="p-5">
           <h1 className="text-2xl text-gray-800 font-light text-center">Clientes</h1>
 
-          <Link href="/NuevoCliente">
+          <Link href="/cliente/formulario">
             <a className="bg-blue-800 py-2 px-5 text-white rounded text-sm hover:bg-gray-800 font-bold">
               Nuevo Cliente
             </a>
@@ -53,6 +52,7 @@ const QUERY_CLIENTES_USUARIO = gql`
                 <th className="w-1/5 py-2">Nombre</th>
                 <th className="w-1/5 py-2">Empresa</th>
                 <th className="w-1/5 py-2">Email</th>
+                <th className="w-1/5 py-2">Telefono</th>
                 <th className="w-1/12 py-2">Opciones</th>
               </tr>
             </thead>
