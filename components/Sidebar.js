@@ -21,7 +21,7 @@ export const Sidebar = () => {
                     </Link>
                 </li>
                 <li className={router.pathname === "/Pedidos" ? "bg-blue-800 p-2 rounded" : "p-2"}>
-                    <Link href="/Pedidos">
+                    <Link href="/pedidos">
                         <a className="text-white mb-2 block">
                             Pedidos
                         </a>

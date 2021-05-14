@@ -138,15 +138,14 @@ const NuevoCliente = () => {
                     }
                 }
             })
+
+            Swal.fire(
+                'Bien!',
+                'El cliente ha sido registrado éxitosamente',
+                'success'
+            )
     
-            setState({
-                ...state,
-                mensaje: 'El cliente ha sido registrado éxitosamente'
-            })
-    
-            setTimeout(() => {
-                router.push('/cliente');
-            }, 2000)
+            router.push('/cliente');
         } catch (err) {
             setState({
                 ...state,

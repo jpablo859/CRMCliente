@@ -23,6 +23,7 @@
     "normalize.css": "^8.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-select": "^4.3.1",
     "sweetalert2": "^10.16.7",
     "tailwindcss": "^2.1.2",
     "yup": "^0.32.9"
