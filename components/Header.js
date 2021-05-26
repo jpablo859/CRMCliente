@@ -1,5 +1,5 @@
 import React from 'react'
-import { useQuery, gql } from '@apollo/client'
+import { useQuery, useApolloClient, gql } from '@apollo/client'
 import { useRouter } from 'next/router'
 
 const QUERY_USUARIO = gql`
@@ -14,11 +14,11 @@ const QUERY_USUARIO = gql`
 
 export const Header = () => {
 
-    const { data, loading, refetch } = useQuery(QUERY_USUARIO);
+    const { data, loading } = useQuery(QUERY_USUARIO);
     const router = useRouter();
+    const client = useApolloClient();
 
     if (loading) {
-        refetch();
         return null;
     }
 
@@ -29,6 +29,7 @@ export const Header = () => {
     const { nombre, apellido } = data.obtenerUsuario;
 
     const cerrarSesion = () => {
+        client.clearStore();
         localStorage.removeItem('token');
         router.push('/Login');
     }

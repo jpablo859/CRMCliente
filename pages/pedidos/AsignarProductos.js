@@ -13,12 +13,13 @@ const AsignarProductos = () => {
 
     const [ producto, setProducto ] = useState([]);
 
-    const { seleccionarProducto } = useContext(PedidoContext);
+    const { seleccionarProducto, actualizarTotal } = useContext(PedidoContext);
 
     const { data, loading, error } = useQuery(QUERY_PRODUCTOS);
 
     useEffect(() => {
-        seleccionarProducto(producto)
+        seleccionarProducto(producto);
+        actualizarTotal();
     }, [producto]);
 
     if (loading) return "Cargando...";
@@ -38,7 +39,7 @@ const AsignarProductos = () => {
     return (
         <>
             <p className="mt-10 my-2 bg-white border-l-4 border-gray-800 text-gray-700 p-2 text-sm font-bold">
-                1- Seleccione los productos
+                1- Seleccione los productos 
             </p>
             <Select 
                 className="mt-3 "

@@ -19,7 +19,7 @@ const QUERY_CLIENTES_USUARIO = gql`
 
  const Index = () => {
 
-  const { data, loading } = useQuery(QUERY_CLIENTES_USUARIO);
+  const { data, loading, error } = useQuery(QUERY_CLIENTES_USUARIO);
 
   const router = useRouter();
 
@@ -27,7 +27,9 @@ const QUERY_CLIENTES_USUARIO = gql`
     return 'Cargando...';
   } 
 
-  if (!data) {
+  console.log(data)
+
+  if (!data.obtenerClientesVendedor) {
     router.push('/Login')
     return 'Cargando...';
   }
